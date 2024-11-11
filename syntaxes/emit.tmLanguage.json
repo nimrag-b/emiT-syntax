@@ -1,0 +1,65 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "emiT",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"name": "constant.numeric.emit",
+			"match": "\\b[[:digit:]]+(\\.[[:digit:]]*)?"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.emit",
+				"match": "\\b(if|kills|dead|alive|print|is)\\b"
+			},
+			{
+				"name": "keyword.control.emit",
+				"match": "\\b(create)\\b"
+			},
+			{
+				"name": "keyword.control.time.emit",
+				"match": "\\b(warps|time)\\b"
+			}
+		]
+		},
+		"operators":{
+			"patterns": [{
+
+				"name": "keyword.operator.emit",
+				"match": "\\*|/|-|\\+"
+			},
+			{
+				"name": "keyword.operator.assignment.emit",
+				"match": "="
+			},
+			{
+				"name": "keyword.operator.comparison.emit",
+				"match": "==|<|>"
+			}
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.emit",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.emit",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.emit"
+	
+}
